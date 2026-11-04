@@ -1,0 +1,93 @@
+/* General Federal Industries LLC — shared site styles (v2).
+   Moved out of the v1 pages' inline <style> blocks so the site can run
+   under a strict Content-Security-Policy (style-src 'self'). */
+:root{
+  --ink:#1a2332; --navy:#16283f; --slate:#42506b; --line:#d8dee8;
+  --accent:#8a6d2f; --bg:#ffffff; --panel:#f4f6f9; --max:1080px;
+  --danger:#8f2d2d; --ok:#27632f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--bg);line-height:1.6}
+.sans{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+header{background:var(--navy);color:#fff}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.topbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding:22px 0}
+.firm{font-size:1.45rem;letter-spacing:.04em;line-height:1.25}
+.firm small{display:block;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:#b9c6d8;margin-top:4px}
+nav a{color:#dbe4f0;text-decoration:none;font-size:.95rem;margin-left:26px}
+nav a:hover{color:#fff;text-decoration:underline}
+nav a.active{color:#fff;text-decoration:underline}
+.rule{height:3px;background:var(--accent)}
+.hero{padding:56px 0 44px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:2.1rem;font-weight:normal;line-height:1.25;max-width:22em}
+.hero p{margin-top:18px;font-size:1.08rem;color:var(--slate);max-width:44em}
+section{padding:44px 0}
+h1.page{font-size:1.9rem;font-weight:normal;margin:44px 0 10px}
+h2{font-size:1.35rem;font-weight:normal;letter-spacing:.02em;margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--accent);display:inline-block}
+p.lead{font-size:1.05rem;color:var(--ink);max-width:46em}
+p{max-width:46em}
+p + p{margin-top:12px}
+.mt14{margin-top:14px}
+.mt20{margin-top:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:22px}
+.card{background:var(--panel);border:1px solid var(--line);padding:24px}
+.card h3{font-size:1.08rem;font-weight:bold;margin-bottom:8px}
+.card p{color:var(--slate);font-size:.98rem;max-width:none}
+ul.plain{list-style:none;margin-top:10px;max-width:46em}
+ul.plain li{padding:7px 0 7px 20px;position:relative;border-bottom:1px solid var(--line)}
+ul.plain li:last-child{border-bottom:none}
+ul.plain li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+.facts{background:var(--panel);border:1px solid var(--line);padding:26px}
+.facts table{width:100%;border-collapse:collapse;font-size:1rem}
+.facts th{text-align:left;font-weight:bold;padding:8px 12px 8px 0;width:220px;vertical-align:top}
+.facts td{padding:8px 0;color:var(--slate)}
+.facts tr{border-bottom:1px solid var(--line)}
+.facts tr:last-child{border-bottom:none}
+.cta{background:var(--navy);color:#fff;padding:40px 0}
+.cta h2{color:#fff;border-bottom-color:var(--accent)}
+.cta p{color:#dbe4f0;max-width:44em}
+.cta a{color:#fff}
+.cta-email{margin-top:12px;font-size:1.15rem}
+footer{padding:26px 0 34px;color:var(--slate);font-size:.9rem}
+a{color:var(--navy)}
+.btn{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;
+  padding:12px 22px;font-size:1rem;border:1px solid var(--navy);cursor:pointer}
+.btn:hover{background:var(--accent);border-color:var(--accent)}
+.btn.secondary{background:#fff;color:var(--navy)}
+.btn.secondary:hover{background:var(--panel);color:var(--navy)}
+.pt28{padding-top:28px}
+
+/* --- sign-in + intake form (request.html) --- */
+.auth-box,.form-box{background:var(--panel);border:1px solid var(--line);padding:26px;max-width:760px}
+.form-box{margin-top:26px}
+label.flabel{display:block;font-weight:bold;margin:18px 0 6px}
+label.flabel:first-child{margin-top:0}
+.hint{font-weight:normal;color:var(--slate);font-size:.9rem}
+input[type=text],input[type=email],input[type=tel],input[type=file],
+select,textarea{
+  width:100%;padding:10px;font-size:1rem;border:1px solid var(--line);
+  background:#fff;color:var(--ink);font-family:inherit}
+textarea{min-height:140px}
+.field-error{color:var(--danger);font-size:.92rem;min-height:1.2em;margin-top:4px}
+.msg{margin-top:14px;font-size:1rem}
+.msg.ok{color:var(--ok)}
+.msg.err{color:var(--danger)}
+.notice{border:1px solid var(--accent);background:#fdf8ec;padding:16px 18px;max-width:760px;margin-top:22px}
+.notice p{max-width:none}
+[hidden]{display:none !important}
+.sub-card{background:#fff;border:1px solid var(--line);padding:18px;margin:14px 0;max-width:760px}
+.sub-card h3{font-size:1.05rem;margin-bottom:6px}
+.badge{display:inline-block;padding:1px 9px;border-radius:8px;font-size:.82rem;background:#e8edf4;color:var(--navy)}
+.badge.locked{background:#f6e0e0;color:var(--danger)}
+.badge.clean{background:#e2f2e4;color:var(--ok)}
+.badge.pending{background:#fdf3d8;color:#6d5410}
+.row-flex{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+#turnstile-box{margin-top:14px}
+
+@media (max-width:640px){
+  .hero{padding:38px 0 30px}
+  .hero h1{font-size:1.6rem}
+  h1.page{font-size:1.5rem}
+  .facts th{width:130px}
+  nav a{margin-left:16px}
+}
