@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security &amp; Your Data — General Federal Industries LLC</title>
+<meta name="description" content="How GeneralOS protects your company's data: where it lives, how it's encrypted, how backups and restores work, and the data rights you keep forever.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap topbar">
+    <div class="firm">General Federal Industries LLC
+      <small>Technology Company &amp; Government Contractor</small>
+    </div>
+    <nav class="sans">
+      <a href="index.html">Home</a>
+      <a href="capabilities.html">Capabilities</a>
+      <a href="request.html">Request Work</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="rule"></div>
+</header>
+
+<section class="wrap">
+  <h1>Security &amp; your data</h1>
+  <p class="lead">Your customer list is your business. This page says, in plain words, where your data lives, how it's protected, and the rights you keep — no fine print, no inflated claims. If anything here ever changes, this page changes with it.</p>
+
+  <div class="card">
+    <h3>Where your data lives</h3>
+    <p>GeneralOS runs on established United States cloud infrastructure: our database is hosted by Supabase in its US West region, and our application runs on Render. Connections are encrypted in transit (HTTPS/TLS everywhere), and stored data is encrypted at rest by our infrastructure providers.</p>
+  </div>
+
+  <div class="card">
+    <h3>Your company is walled off</h3>
+    <p>Every company's workspace is sealed from every other company's. Access is checked on every single request — a signed-in user from one company cannot see another company's customers, deals, or messages, and our own testing tries exactly that on a regular basis. Inside your workspace, your team has clear roles — Owner, Manager, Employee — and the sensitive areas (money, taxes, team management) are limited to the people you choose.</p>
+  </div>
+
+  <div class="card">
+    <h3>Passwords &amp; sign-in</h3>
+    <p>Passwords are never stored in plain text — only as strong one-way hashes (bcrypt). New team members must verify a one-time emailed code and set their own password before they can use the account. Sign-in attempts are rate-limited, and sessions expire. Even our own backup files exclude password hashes by design: if a backup ever leaked, it would contain no credentials.</p>
+  </div>
+
+  <div class="card">
+    <h3>Backups — and proof they restore</h3>
+    <p>A backup that has never been restored is a hope, not a backup. On top of our providers' own backup systems, we pull a full backup of the platform every week and store it off-platform — and we test restoring real data into a fresh workspace. Our first restore drill ran on November 5, 2026, and passed: every record checked came back intact.</p>
+  </div>
+
+  <div class="card">
+    <h3>Your data is yours</h3>
+    <p>Download everything — contacts, pipelines, deals, quotes, tasks — in one click, at any time, in an open format. No exit fees, no hostage negotiations. Cancel any time, and ask us to hard-delete your workspace and we'll do it. We don't lock you in. We don't have to.</p>
+  </div>
+
+  <div class="card">
+    <h3>Who else touches the data</h3>
+    <p>We keep the list short, and here it is: <strong>Render</strong> (application hosting), <strong>Supabase</strong> (database hosting), <strong>Stripe</strong> (payment processing — only if you connect payments), and <strong>Resend</strong> (email delivery — only when email features are enabled for your workspace). That's the whole list. We never sell customer data, and we never use your data to train anything.</p>
+  </div>
+
+  <div class="card">
+    <h3>Straight talk</h3>
+    <p>We're a young company, and we'd rather tell you that than dress this page up. Our protections above are real and tested by us regularly. Independent third-party security testing is on our roadmap before large-scale rollout, and this page will say so plainly when it's done. If you have a security question — or you run a security review before buying — ask us through the <a href="request.html">Request Work</a> page and you'll get a straight answer.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap sans">&copy; 2026 General Federal Industries LLC. All rights reserved. · GeneralOS&trade; is a product of General Federal Industries LLC · <a href="request.html">Client sign-in</a> · <a href="security.html">Security &amp; your data</a></div>
+</footer>
+
+</body>
+</html>
