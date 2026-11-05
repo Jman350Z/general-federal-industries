@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Request Work — General Federal Industries LLC</title>
-<meta name="description" content="Send General Federal Industries a work request: what you need, your budget, and your timeline. Secure client sign-in; uploaded documents are malware-scanned before our team can open them.">
+<meta name="description" content="Start with General Federal Industries: join the GeneralOS founding pilot (90 days free for ten businesses), or reach our team about government and contract work.">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://accounts.google.com https://challenges.cloudflare.com; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://gfi-intake.jeffpruden288.workers.dev; frame-src https://accounts.google.com https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,106 +28,21 @@
 
 <div class="wrap">
   <h1 class="page">Request Work</h1>
-  <p class="lead">This intake is for <strong>United States government agencies and U.S. businesses</strong>. Tell us exactly what you need done, the budget you have for the job, and the timeline you need it in — we review every request personally.</p>
-  <p class="mt14">You sign in first. That keeps spam out and makes sure our answer reaches the right person at your organization.</p>
+  <p class="lead">Two ways to start with us — pick the one that fits.</p>
 
-  <div class="notice">
-    <p><strong>About PDF uploads:</strong> if you attach a scope of work or RFP document, it goes into quarantine and is scanned with multiple antivirus engines <em>before anyone at GFI can open it</em>. A file that has not cleared its scan stays locked — including from us. Clean files are released to our team as downloads only, never opened in a browser.</p>
-  </div>
-
-  <!-- ===== sign-in ===== -->
   <section>
-    <h2>Client Sign-In</h2>
-    <div class="auth-box" id="signin-box">
-      <label class="flabel" for="auth-name">Your name <span class="hint">(optional)</span></label>
-      <input type="text" id="auth-name" autocomplete="name">
-      <label class="flabel" for="auth-email">Email</label>
-      <input type="email" id="auth-email" autocomplete="email">
-      <div id="turnstile-box"></div>
-      <p class="mt14 row-flex">
-        <button type="button" class="btn" id="auth-send-code">Email me a sign-in code</button>
-        <span id="google-btn"></span>
-      </p>
-      <div id="code-step" hidden>
-        <label class="flabel" for="auth-code">Sign-in code <span class="hint">(6 digits, check your inbox)</span></label>
-        <input type="text" id="auth-code" inputmode="numeric" autocomplete="one-time-code">
-        <p class="mt14"><button type="button" class="btn" id="auth-verify">Verify &amp; sign in</button></p>
-      </div>
-      <div id="register-step" hidden>
-        <p class="hint">Email codes are being set up on this system. For now you can create your account with your name and email — submissions from unverified accounts are marked as such for our team.</p>
-        <p class="mt14"><button type="button" class="btn" id="auth-register">Create account &amp; sign in</button></p>
-      </div>
-      <p class="msg" id="auth-msg" role="status"></p>
-    </div>
-    <div class="auth-box" id="signedin-box" hidden>
-      <p>Signed in as <strong id="who"></strong>. <button type="button" class="btn secondary" id="signout">Sign out</button></p>
-    </div>
+    <h2>Businesses: the GeneralOS Founding Pilot</h2>
+    <p>GeneralOS is the system we run our own company on — customers, job pipelines, tasks, and follow-ups in one simple place. We're opening a <strong>founding pilot: ten businesses get it free for 90 days</strong>, full system, no card up front. The only ask is one 30-minute setup call where we load your real customers and build your pipeline with you.</p>
+    <p>The price is in writing from day one: after the pilot it's <strong>$297/month, locked for life</strong> for pilot companies — and your data exports with you at any time, whether you stay or not. We don't lock you in. We don't have to.</p>
+    <p class="mt14"><a class="btn" href="https://generalos.onrender.com">Start the free pilot signup &rarr;</a></p>
+    <p class="mt14">Signing up takes a minute. We book your setup session right after.</p>
   </section>
 
-  <!-- ===== the form ===== -->
-  <section id="form-section" hidden>
-    <h2>Your Work Request</h2>
-    <form class="form-box" id="intake-form" novalidate>
-      <label class="flabel" for="f-organization">Organization / agency</label>
-      <input type="text" id="f-organization" autocomplete="organization">
-      <p class="field-error" id="e-organization"></p>
-
-      <label class="flabel" for="f-contactName">Contact name</label>
-      <input type="text" id="f-contactName" autocomplete="name">
-      <p class="field-error" id="e-contactName"></p>
-
-      <label class="flabel" for="f-contactEmail">Contact email <span class="hint">(optional — defaults to your account email)</span></label>
-      <input type="email" id="f-contactEmail" autocomplete="email">
-      <p class="field-error" id="e-contactEmail"></p>
-
-      <label class="flabel" for="f-phone">Phone</label>
-      <input type="tel" id="f-phone" autocomplete="tel" placeholder="(209) 555-0100">
-      <p class="field-error" id="e-phone"></p>
-
-      <label class="flabel" for="f-category">What kind of work?</label>
-      <select id="f-category">
-        <option value="">Choose one…</option>
-        <option>Janitorial</option>
-        <option>Facilities</option>
-        <option>Pest Control</option>
-        <option>Supplies</option>
-        <option>Other</option>
-      </select>
-      <p class="field-error" id="e-category"></p>
-
-      <label class="flabel" for="f-state">State where the work is</label>
-      <select id="f-state"><option value="">Choose one…</option></select>
-      <p class="field-error" id="e-state"></p>
-
-      <label class="flabel" for="f-location">Service location <span class="hint">(city and facility)</span></label>
-      <input type="text" id="f-location" placeholder="Modesto, CA — area office">
-      <p class="field-error" id="e-location"></p>
-
-      <label class="flabel" for="f-budget">Budget you have for this job</label>
-      <input type="text" id="f-budget" placeholder="e.g. $48,000 for the first year">
-      <p class="field-error" id="e-budget"></p>
-
-      <label class="flabel" for="f-timeline">Timeline you need it done in</label>
-      <input type="text" id="f-timeline" placeholder="e.g. Start November 1 — 30 days to mobilize">
-      <p class="field-error" id="e-timeline"></p>
-
-      <label class="flabel" for="f-details">Exactly what you need done</label>
-      <textarea id="f-details"></textarea>
-      <p class="field-error" id="e-details"></p>
-
-      <label class="flabel" for="f-file">Scope / RFP document <span class="hint">(optional, PDF only, up to 10 MB — it will be security-scanned before our team can open it)</span></label>
-      <input type="file" id="f-file" accept="application/pdf,.pdf">
-      <p class="field-error" id="e-file"></p>
-
-      <p class="mt14"><button type="submit" class="btn" id="submit-btn">Send work request</button></p>
-      <p class="msg" id="form-msg" role="status"></p>
-    </form>
-  </section>
-
-  <!-- ===== your requests ===== -->
-  <section id="mine-section" hidden>
-    <h2>Your Requests</h2>
-    <div id="mine-list"></div>
+  <section>
+    <h2>Government agencies &amp; contract work</h2>
+    <p>Our secure document intake — the sign-in portal where agencies and businesses send work requests and RFP documents — is being upgraded and returns soon. The standard behind it hasn't changed: every document sent to GFI is quarantined and malware-scanned before anyone on our team can open it.</p>
+    <p class="mt14">Until it returns, reach our team through our founder's LinkedIn and we'll open your request personally:</p>
+    <p class="mt14"><a class="btn secondary" href="https://www.linkedin.com/in/jeff-pruden-a96ab2b3/">Contact GFI on LinkedIn &rarr;</a></p>
   </section>
 </div>
 
@@ -135,7 +50,5 @@
   <div class="wrap sans">&copy; 2026 General Federal Industries LLC. All rights reserved. · GeneralOS&trade; is a product of General Federal Industries LLC</div>
 </footer>
 
-<script src="js/config.js"></script>
-<script src="js/intake.js"></script>
 </body>
 </html>
