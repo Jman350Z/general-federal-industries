@@ -19,6 +19,7 @@ nav a:hover{color:#fff;text-decoration:underline}
 nav a.active{color:#fff;text-decoration:underline}
 .rule{height:3px;background:var(--accent)}
 .hero{padding:56px 0 44px;border-bottom:1px solid var(--line)}
+.hero-logo{display:block;width:min(320px,78%);height:auto;border:1px solid var(--line);margin-bottom:26px}
 .hero h1{font-size:2.1rem;font-weight:normal;line-height:1.25;max-width:22em}
 .hero p{margin-top:18px;font-size:1.08rem;color:var(--slate);max-width:44em}
 section{padding:44px 0}
