@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lost-Lead Grader — General Federal Industries LLC</title>
+<meta name="description" content="Four questions, one honest estimate: what slow follow-up is likely costing your business each month. Free, from the makers of GeneralOS.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap topbar">
+    <div class="firm">General Federal Industries LLC
+      <small>Technology Company &amp; Government Contractor</small>
+    </div>
+    <nav class="sans">
+      <a href="index.html">Home</a>
+      <a href="capabilities.html">Capabilities</a>
+      <a href="request.html">Request Work</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="rule"></div>
+</header>
+
+<section class="wrap">
+  <h1>The Lost-Lead Grader</h1>
+  <p class="lead">Most service businesses don't lose jobs on price. They lose them in the gap — the enquiry that waits until tomorrow, the quote that sits for a week. Answer four questions and get an honest estimate of what that gap likely costs you each month.</p>
+
+  <form id="grader-form" class="card">
+    <p>
+      <label><strong>1. How many quote requests or enquiries does your business get in a typical week?</strong><br>
+      <input type="number" id="g-weekly" min="0" max="10000" value="10" required style="width:120px"></label>
+    </p>
+    <p>
+      <label><strong>2. How many of them get a real answer while they're still warm — same day?</strong><br>
+      <select id="g-warm">
+        <option value="0.9">Almost all of them</option>
+        <option value="0.6" selected>Most of them</option>
+        <option value="0.35">About a third</option>
+        <option value="0.15">Very few — we get to them when we can</option>
+      </select></label>
+    </p>
+    <p>
+      <label><strong>3. What's a typical job worth to you?</strong><br>
+      $<input type="number" id="g-job" min="0" max="1000000" value="1500" required style="width:140px"></label>
+    </p>
+    <p>
+      <label><strong>4. Where do your enquiries live right now?</strong><br>
+      <select id="g-where">
+        <option value="scattered">Texts, calls, and inboxes — a bit everywhere</option>
+        <option value="one-inbox">One shared inbox or phone</option>
+        <option value="system">A system the whole team can see</option>
+      </select></label>
+    </p>
+    <p><button class="btn" type="submit">Grade my follow-up &rarr;</button></p>
+  </form>
+
+  <div id="grader-result" class="card" style="display:none">
+    <h2>Your estimate</h2>
+    <p style="font-size:20px">About <strong id="r-waits">—</strong> requests a month wait past the warm window.<br>
+    At a typical job value, that's roughly <strong id="r-lost">—</strong> in work likely going cold every month — about <strong id="r-year">—</strong> a year.</p>
+    <p class="sans" style="font-size:14px"><strong>How we got this number (no tricks):</strong> your weekly requests × 4.33 weeks = monthly requests. The share you said doesn't get a same-day answer is the "waits" number. We then assume <strong>one in three</strong> of the requests that wait never turns into a job — the rest would have closed at your typical job value. Change any answer above and the estimate changes with it; it's a planning number, not a measurement. Your real number is the one we find together in a setup session, from your actual pipeline.</p>
+    <p id="r-note"></p>
+    <p class="mt14"><a class="btn" href="request.html">See the Founding Pilot — 90 days free &rarr;</a></p>
+    <p class="sans" style="font-size:14px">The pilot exists to close exactly this gap: every request lands in one triage box, quotes go out as tap-to-accept links, and the board flags any deal that sits too long — before it goes cold.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap sans">&copy; 2026 General Federal Industries LLC. All rights reserved. · GeneralOS&trade; is a product of General Federal Industries LLC · <a href="request.html">Client sign-in</a></div>
+</footer>
+
+<script src="js/grader.js"></script>
+</body>
+</html>
