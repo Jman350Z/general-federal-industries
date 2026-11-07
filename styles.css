@@ -57,6 +57,11 @@ a{color:var(--navy)}
 .btn.secondary{background:#fff;color:var(--navy)}
 .btn.secondary:hover{background:var(--panel);color:var(--navy)}
 .pt28{padding-top:28px}
+.w120{width:120px}
+.w140{width:140px}
+.fs20{font-size:20px}
+.fs14{font-size:14px}
+.hidden{display:none}
 
 /* --- sign-in + intake form (request.html) --- */
 .auth-box,.form-box{background:var(--panel);border:1px solid var(--line);padding:26px;max-width:760px}
